@@ -45,11 +45,11 @@ func putShip(lenShip int, field [][]int) [][]int {
 	choice := availableBegs[rand.Intn(len(availableBegs))]
 	begRow := choice[0]
 	begCol := choice[1]
-	if dir {  // downwards
+	if dir { // downwards
 		for row := begRow; row < begRow+lenShip; row++ {
 			field[row][begCol] = 1
 		}
-	} else {  // to the right
+	} else { // to the right
 		for col := begCol; col < begCol+lenShip; col++ {
 			field[begRow][col] = 1
 		}
@@ -101,7 +101,7 @@ func revertField(field [][]int) [][]int {
 
 func isUnsuitable(row, step int, currField [][]int) bool {
 	size := len(currField)
-	return (currField[row][step] != 0) || 
-	((row - 1 >= 0) && currField[row-1][step] != 0) || 
-	((row + 1 < size) && currField[row+1][step] != 0) 
+	return (currField[row][step] != 0) ||
+		((row-1 >= 0) && currField[row-1][step] != 0) ||
+		((row+1 < size) && currField[row+1][step] != 0)
 }
