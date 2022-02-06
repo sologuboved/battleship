@@ -45,11 +45,11 @@ func putShip(lenShip int, field [][]int) [][]int {
 	choice := availableBegs[rand.Intn(len(availableBegs))]
 	begRow := choice[0]
 	begCol := choice[1]
-	if dir {
+	if dir {  // downwards
 		for row := begRow; row < begRow+lenShip; row++ {
 			field[row][begCol] = 1
 		}
-	} else {
+	} else {  // to the right
 		for col := begCol; col < begCol+lenShip; col++ {
 			field[begRow][col] = 1
 		}
